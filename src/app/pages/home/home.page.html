@@ -30,13 +30,28 @@
     </ion-card-header>
   
     <ion-card-content>
-   <ion-items lines="nones"></ion-items>
+   <ion-items lines="none">
    <ion-icon name="hourglass-outline" slot="start" color="warning"></ion-icon>
    <ion-label>
    On Hold
+   <p>16/07/2022 9:30 pm</p>
   </ion-label>
+</ion-items>
 
+<ion-items lines="none">
+<ion-label>
+  <p> created at 15/07/2022 9:30 pm</p>
+  <p> Note that we have two bags are full</p>
+ </ion-label>
+</ion-items>
+<ion-button color="success" fill="clear" size="full"> See all...</ion-button>
     </ion-card-content>
   </ion-card>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="success">
+      <ion-icon  name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
 </ion-content>
