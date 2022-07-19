@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-loader',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./loader.page.scss'],
 })
 export class LoaderPage implements OnInit {
-
-  constructor() { }
+// add here private router: Router
+  constructor(private router: Router) { }
 
   ngOnInit() {
+    // add this to link pages
+    // add we can set time to open from loader to login page after 1 seconds
+    setTimeout(()=>{
+
+      this.router.navigate(['/login'])
+    }),1000
   }
 
 }

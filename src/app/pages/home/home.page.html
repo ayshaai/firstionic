@@ -33,11 +33,11 @@
 
   </ion-card-header>
 
-  <ion-button color="success" fill="clear" size="full" footer> See all...</ion-button>
+  <ion-button color="success" (click)="showcall()" fill="clear" size="full" footer > See all...</ion-button>
 </app-pickup-call-card>
   
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button color="success">
+    <ion-fab-button color="success" (click)="addnew()">
       <ion-icon  name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>

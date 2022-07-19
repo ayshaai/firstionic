@@ -1,5 +1,8 @@
 <ion-header>
   <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-back-button text=""></ion-back-button>
+    </ion-buttons>
     <ion-title>Register</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -91,7 +94,7 @@
 
     </ion-card-content>
   </ion-card>
-  <ion-button color="secondary" size="full">Register</ion-button>
+  <ion-button color="secondary" size="full" (click)="gotohome()">Register</ion-button>
 
 
 
