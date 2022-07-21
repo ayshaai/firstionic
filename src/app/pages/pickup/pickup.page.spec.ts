@@ -4,6 +4,7 @@ import { IonicModule } from '@ionic/angular';
 import { PickupPage } from './pickup.page';
 // add this lib
 import { Router } from '@angular/router';
+import { AppRoutingModule } from 'src/app/app-routing.module';
 describe('PickupPage', () => {
   let component: PickupPage;
   let fixture: ComponentFixture<PickupPage>;
@@ -12,7 +13,9 @@ let router:Router;
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ PickupPage ],
-      imports: [IonicModule.forRoot()]
+      imports: [IonicModule.forRoot(),
+        AppRoutingModule
+        ]
     }).compileComponents();
 
     fixture = TestBed.createComponent(PickupPage);
@@ -26,7 +29,6 @@ let router:Router;
 it('it will add new pickupcall page', () => {
   spyOn(router,'navigate');
   component.addnewpickup();
-  expect(router.navigate).toHaveBeenCalledWith(['/home'])
-
+  expect(router.navigate).toHaveBeenCalledWith(['/home']);
 });
 });

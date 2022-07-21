@@ -3,6 +3,7 @@ import { IonicModule } from '@ionic/angular';
 // add this lib
 import { Router } from '@angular/router';
 import { HomePage } from './home.page';
+import { AppRoutingModule } from 'src/app/app-routing.module';
 
 describe('HomePage', () => {
   let component: HomePage;
@@ -12,7 +13,9 @@ let router:Router;
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ HomePage ],
-      imports: [IonicModule.forRoot()]
+      imports: [IonicModule.forRoot(),
+        AppRoutingModule
+        ]
     }).compileComponents();
 
     fixture = TestBed.createComponent(HomePage);
@@ -25,14 +28,14 @@ let router:Router;
 it('it will go to pickupcall page', () => {
   spyOn(router,'navigate');
   component.showcall();
-  expect(router.navigate).toHaveBeenCalledWith(['/pickup-calls'])
+  expect(router.navigate).toHaveBeenCalledWith(['/pickup-calls']);
 
 });
 // here i must add this for login button
 it('it will add new pickupcall page', () => {
   spyOn(router,'navigate');
   component.addnew();
-  expect(router.navigate).toHaveBeenCalledWith(['/pickup'])
+  expect(router.navigate).toHaveBeenCalledWith(['/pickup']);
 
 });
 });

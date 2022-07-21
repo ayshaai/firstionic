@@ -14,7 +14,9 @@ describe('LoaderPage', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ LoaderPage ],
-      imports: [IonicModule.forRoot()]
+      imports: [IonicModule.forRoot(),
+        AppRoutingModule
+        ]
     
     }).compileComponents();
   
@@ -32,6 +34,6 @@ describe('LoaderPage', () => {
     spyOn(router,'navigate');
     component.ngOnInit();
     tick(1500);
-    expect(router.navigate).toHaveBeenCalledWith(['/login'])
+    expect(router.navigate).toHaveBeenCalledWith(['/login']);
   }));
 });
