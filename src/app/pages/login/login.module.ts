@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { LoginPageRoutingModule } from './login-routing.module';
 
 import { LoginPage } from './login.page';
+import { ErrorMessageComponent } from 'src/app/components/error-message/error-message.component';
 
 @NgModule({
   imports: [
@@ -16,7 +17,12 @@ import { LoginPage } from './login.page';
     LoginPageRoutingModule,
     //for form
     ReactiveFormsModule
+
   ],
-  declarations: [LoginPage]
+  declarations: [
+    LoginPage,
+      //for error message
+      ErrorMessageComponent
+  ]
 })
 export class LoginPageModule {}
