@@ -1,6 +1,6 @@
 import { createReducer, on } from "@ngrx/store";
 import { AppInitialState } from "../AppInitialState";
-import { recoverdPassword, recoverdPasswordFail, recoverdPasswordSuccess } from "./Login.actions";
+import { login, loginFail, loginSuccess, recoverdPassword, recoverdPasswordFail, recoverdPasswordSuccess } from "./Login.actions";
 import { LoginState } from "./LoginState";
 
 // call functions from AppInitialState.login for login
@@ -26,6 +26,35 @@ isRecovingPassword:true
     };
     
             }),
+            
+
+            on(login,currentState=>{
+               return {
+                   ...currentState,
+                   error:null,
+               isLoggedIn:false,
+               isLoggingIn:true
+               }
+               
+                       }),
+
+ on(loginSuccess,currentState=>{
+                        return {
+                            ...currentState,
+                            error:null,
+                        isLoggedIn:true,
+                        isLoggingIn:false
+                        }
+  }),  
+
+    on(loginFail,(currentState,action)=>{
+    return {
+          ...currentState,
+                            error:action.error,
+                        isLoggedIn:false,
+                        isLoggingIn:false
+                        }
+  }), 
 
  on(recoverdPasswordFail,(currentState,action)=>{
     return {
@@ -33,7 +62,7 @@ isRecovingPassword:true
         error:action.error,
     isRecovedPassword:false,
     isRecovingPassword:false
-    };
+    }
                 
                     })
 
