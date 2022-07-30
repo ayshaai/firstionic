@@ -27,7 +27,8 @@
        
      
       </ion-card-content>
-<ion-button color="dark" fill="clear" size="full" [disabled]="!form.get('email').valid"> Forgetten Email/Password</ion-button>
+<ion-button color="dark" fill="clear" size="full" [disabled]="!form.get('email').valid"
+(click)="ForgetEmailPassword()" id="recoverPasswordButton"> Forgetten Email/Password</ion-button>
 <ion-button color="success" size="full" (click)="login()" [disabled]="!form.valid"> Login</ion-button>
 <ion-button color="primary" size="full" fill="clear" (click)="register()">Register</ion-button>
 
